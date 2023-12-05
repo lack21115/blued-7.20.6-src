@@ -1,0 +1,3 @@
+[submodule "blued-7.20.6-res"]
+	path = blued-7.20.6-res
+	url = git@github.com:lack21115/blued-7.20.6-res.git
